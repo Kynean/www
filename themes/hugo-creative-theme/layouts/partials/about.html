@@ -10,10 +10,14 @@
                     <hr class="light">
                 {{ end }}
                 {{ with .Site.Params.about.description }}
-                    <p class="text-faded">{{ . | markdownify }}</p>
+                    <div class="text-faded">
+                        <p>{{ . | markdownify }}</p>
+                    </div>
                 {{ end }}
-                {{ with .Site.Params.about.buttonText }}
-                    <a href="#" class="btn btn-default btn-xl">{{ . }}</a>
+                {{ with .Site.Params.about.button }}
+                    <a href="{{ .link }}" class="btn btn-default btn-xl page-scroll">
+                        {{ .text }}
+                    </a>
                 {{ end }}
             </div>
         </div>
